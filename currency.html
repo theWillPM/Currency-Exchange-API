@@ -1,0 +1,90 @@
+<!-- 
+ @name: JavaScript Essentials Class Activity 
+ @Course Code: SODV1201 
+ @class: Software Development Diploma program. 
+ @author: Willian Pereira Munhoz. 
+  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Willian Pereira Munhoz">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/currency_style.css">
+    <script src="./js/currency_script.js" defer></script>
+    <title>Week 1 - Willian</title>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <a href="./index.html"><div>Index</div></a>
+            <a href="./currency.html"><div>Currency Converter</div></a>
+        </div>
+    </header>
+    <main>
+        <h1>Currency Converter</h1>
+
+        <div>
+            <!-- I left this button here so it can be implemented when I learn to work with cached data (So we can avoid making multiple API requests on the same day.) I want to find a way of storing the currency names and ratios locally, display a "last updated on <date>" and make the update button available to manually fetch from the API. It's not a good practice to force an API fetch every time we refresh the page -->
+            <button type="button" name="request-rates-from-api" id="request-from-api" onclick="updatePage();" hidden="true">Update Data</button>
+
+            <button type="button" name="reset-input" id="reset-input-button" onclick="resetInput();">RESET</button>
+        </div>
+        <table class="convertion-parameters-table">
+            <tr>
+                <th>From: </th>
+                <td>
+                    <select id="from-currency">
+
+                    </select>
+                </td>
+                <th>To: </th>
+                <td>
+                    <select id="to-currency">
+
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <!-- Here I would add oninput="validity.valid||(value='');" to make sure the values are online positive numbers, but it would make it impossible to prompt the requested alert if user types invalid values because they wouldn't be able to type invalid values in the first place! -->
+                <td colspan="2" id="currency-input-cell"><input type="number" min="0.01" max="999999999.99" step="0.01" id="user-input-currency-amount" value="" autofocus></td>
+                <td>
+                    <!-- Button to perform currency conversion -->
+                    <button type="button" name="convert-button" id="convert-button" onclick="displayResults()">CONVERT</button>
+                </td>
+                <!-- Field to display conversion result -->
+                <td id="convertion-result" colspan="2"></td>
+            </tr>
+        </table>
+
+        <!-- Table with every currency's ratio. Must receive data from API and execute updatePage() to create table elements -->
+        <table id="converter-table">
+            <tr>
+                <th>Currency</th>
+                <th>Ratio (to 1 USD)</th>
+            </tr>
+
+        </table>
+    </main>
+
+    <footer>
+        <!-- Link to ExchangeRate-API website -->
+        <a href="https://www.exchangerate-api.com/" class="api">
+            <img src="./img/exchange-rate-logo.png" id="exchange-rate-logo">
+            <span>Powered by: ExchangeRate-API</span>
+        </a>
+
+        <!-- Link to my GitHub -->
+        <a href="https://github.com/theWillPM" id="git-link">
+            <div id="footer-github-container">
+                <img src="./img/GitHub_Logo_White.png" id="github-logo">
+                <span class="footer-text">Willian 2023</span>
+            </div>
+        </a>
+    </footer>
+
+</body>
+</html>

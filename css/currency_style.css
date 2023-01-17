@@ -1,0 +1,70 @@
+/** 
+* @name: JavaScript Essentials Class Activity 
+* @Course Code: SODV1201 
+* @class: Software Development Diploma program. 
+* @author: Willian Pereira Munhoz. 
+*/ 
+
+table {
+    border-radius: 4px;
+    border: 1px solid;
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    margin-bottom: 20px;
+    padding: 1px;
+}
+
+#convertion-parameters-table {
+    border-radius: 2px;
+    border: 1px solid;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+tr {
+    min-width: 300px;
+}
+
+td, th, select {
+    border-radius: 2px;
+    background-color: #fdfdfd;
+    border-bottom: 1px solid #cccccc;
+}
+#converter-table tr, #converter-table td, #converter-table th{
+    text-align: center;
+}
+
+#user-input-currency-amount {
+    display: flex;
+    flex: 1;
+    text-align: right;
+}
+
+#currency-input-cell {
+    display: flex;
+}
+
+#convert-button {
+    display: flex;
+    flex: 1;
+}
+
+#convertion-result{
+    background-color: rgb(235, 252, 253);
+}
+
+.api {
+    margin-left: 7vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+}
+
+#exchange-rate-logo {
+    height: 36px;
+    width: 35px;
+}
